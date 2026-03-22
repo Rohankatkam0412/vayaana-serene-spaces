@@ -65,8 +65,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Center logo */}
-          <div className="absolute left-1/2 -translate-x-1/2">
+          {/* Center logo — desktop only */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2">
             <VayaanaLogo />
           </div>
 
