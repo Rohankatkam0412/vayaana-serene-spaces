@@ -1,105 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* ===== VAYAANA INTERIORS DESIGN SYSTEM =====
+   All colors in HSL. Warm neutrals: off-white, beige, taupe, muted olive.
+   Serif headings (Cormorant Garamond) + sans body (DM Sans).
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core palette */
+    --background: 40 25% 97%;          /* Parchment #F9F7F2 */
+    --foreground: 20 12% 22%;          /* Deep taupe #3C3633 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --surface: 35 22% 88%;             /* Warm beige card surface */
+    --surface-foreground: 20 12% 22%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 97%;
+    --card-foreground: 20 12% 22%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover: 40 25% 97%;
+    --popover-foreground: 20 12% 22%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Primary: taupe/brown */
+    --primary: 25 22% 38%;             /* Warm taupe #7A6A5A */
+    --primary-foreground: 40 25% 97%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Secondary: warm beige */
+    --secondary: 35 22% 88%;
+    --secondary-foreground: 20 12% 22%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Muted */
+    --muted: 38 18% 90%;
+    --muted-foreground: 22 10% 46%;    /* Muted brown #6B625E */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Accent: muted olive */
+    --accent: 80 18% 40%;              /* Muted olive #707A5E */
+    --accent-foreground: 40 25% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 25% 97%;
 
-    --radius: 0.5rem;
+    --border: 35 18% 84%;              /* Light taupe hairline */
+    --input: 35 18% 84%;
+    --ring: 25 22% 38%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.25rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Sidebar (minimal usage) */
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 20 12% 22%;
+    --sidebar-primary: 25 22% 38%;
+    --sidebar-primary-foreground: 40 25% 97%;
+    --sidebar-accent: 35 22% 88%;
+    --sidebar-accent-foreground: 20 12% 22%;
+    --sidebar-border: 35 18% 84%;
+    --sidebar-ring: 25 22% 38%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Custom tokens */
+    --parchment: 40 25% 97%;
+    --beige: 35 22% 88%;
+    --taupe-light: 30 18% 78%;
+    --taupe-dark: 20 12% 22%;
+    --olive: 80 18% 40%;
+    --gold: 38 52% 58%;
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Spacing scale */
+    --section-padding: clamp(4rem, 8vw, 8rem);
+    --container-max: 1320px;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
+    --background: 20 12% 12%;
+    --foreground: 40 20% 90%;
+    --card: 20 12% 15%;
+    --card-foreground: 40 20% 90%;
+    --popover: 20 12% 15%;
+    --popover-foreground: 40 20% 90%;
+    --primary: 38 40% 70%;
+    --primary-foreground: 20 12% 12%;
+    --secondary: 20 10% 22%;
+    --secondary-foreground: 40 20% 90%;
+    --muted: 20 10% 22%;
+    --muted-foreground: 35 12% 60%;
+    --accent: 80 18% 52%;
+    --accent-foreground: 20 12% 12%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive-foreground: 40 20% 90%;
+    --border: 20 10% 28%;
+    --input: 20 10% 28%;
+    --ring: 38 40% 70%;
+    --sidebar-background: 20 12% 12%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 38 40% 70%;
+    --sidebar-primary-foreground: 20 12% 12%;
+    --sidebar-accent: 20 10% 22%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 20 10% 28%;
+    --sidebar-ring: 38 40% 70%;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.7;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-20px);
+    filter: blur(4px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(20px);
+    filter: blur(4px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--taupe-light));
+  border-radius: 2px;
 }
