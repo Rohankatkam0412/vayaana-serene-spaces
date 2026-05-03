@@ -100,7 +100,7 @@ const ContactPage = () => {
               <h2 className="font-serif text-2xl text-foreground">Reach Us Directly</h2>
               <div className="flex flex-col gap-4">
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/918050688548"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-300 group"
@@ -110,11 +110,11 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-muted-foreground">WhatsApp</p>
-                    <p className="font-sans text-sm">+91 98765 43210</p>
+                    <p className="font-sans text-sm">+91 8050688548</p>
                   </div>
                 </a>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+918050688548"
                   className="flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-300 group"
                 >
                   <div className="w-8 h-8 flex items-center justify-center border border-border group-hover:border-primary transition-colors duration-300 flex-shrink-0">
@@ -122,7 +122,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-muted-foreground">Phone</p>
-                    <p className="font-sans text-sm">+91 98765 43210</p>
+                    <p className="font-sans text-sm">+91 8050688548</p>
                   </div>
                 </a>
                 <a

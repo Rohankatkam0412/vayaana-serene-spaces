@@ -54,11 +54,11 @@ const Footer = () => {
             <h4 className="font-sans text-[10px] tracking-[0.3em] uppercase text-primary-foreground/40">Get in Touch</h4>
             <div className="flex flex-col gap-4">
               <a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/918050688548"
                 className="flex items-center gap-3 text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300"
               >
                 <Phone size={14} className="flex-shrink-0" />
-                <span className="font-sans text-sm">+91 98765 43210</span>
+                <span className="font-sans text-sm">+91 8050688548</span>
               </a>
               <a
                 href="mailto:hello@vayaana.in"
