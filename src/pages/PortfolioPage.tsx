@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -6,25 +6,6 @@ import project3 from "@/assets/project-3.jpg";
 import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
-
-const useReveal = (activeCategory: string) => {
-  useEffect(() => {
-    const els = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-    );
-    els.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, [activeCategory]);
-};
 
 const CATEGORIES = ["All", "Residential", "Kitchen", "Wardrobe", "Turnkey", "Custom Space"];
 
@@ -113,7 +94,6 @@ export { projects };
 
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  useReveal(activeCategory);
 
   const filtered = activeCategory === "All"
     ? projects
@@ -123,7 +103,7 @@ const PortfolioPage = () => {
     <main className="pt-24 md:pt-28 pb-24 md:pb-32 overflow-x-hidden">
       {/* Header */}
       <div className="max-w-[1320px] mx-auto px-6 md:px-10">
-        <div className="reveal mb-16">
+        <div className="mb-16">
           <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-muted-foreground">Our Work</span>
           <h1 className="font-serif text-5xl md:text-7xl mt-3 text-foreground leading-none tracking-tight">Portfolio</h1>
           <p className="font-sans text-base text-muted-foreground mt-4 max-w-md leading-relaxed">
@@ -132,7 +112,7 @@ const PortfolioPage = () => {
         </div>
 
         {/* Filter */}
-        <div className="reveal flex flex-wrap gap-3 mb-12">
+        <div className="flex flex-wrap gap-3 mb-12">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
