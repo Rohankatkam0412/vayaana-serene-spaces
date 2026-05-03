@@ -7,7 +7,7 @@ import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 
-const useReveal = () => {
+const useReveal = (activeCategory: string) => {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
     const observer = new IntersectionObserver(
@@ -23,7 +23,7 @@ const useReveal = () => {
     );
     els.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [activeCategory]);
 };
 
 const CATEGORIES = ["All", "Residential", "Kitchen", "Wardrobe", "Turnkey", "Custom Space"];
@@ -113,7 +113,7 @@ export { projects };
 
 const PortfolioPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  useReveal();
+  useReveal(activeCategory);
 
   const filtered = activeCategory === "All"
     ? projects
