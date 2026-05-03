@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import LogoLockup from "@/components/LogoLockup";
 import heroImg from "@/assets/hero-living-room.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
@@ -50,24 +51,6 @@ const featuredProjects = [
   },
 ];
 
-const testimonials = [
-  {
-    quote: "VAYAANA didn't just design our home — they understood how we live. Every corner feels intentional.",
-    name: "Priya & Vikram Sharma",
-    detail: "3BHK Residential, Jubilee Hills",
-  },
-  {
-    quote: "The kitchen is the heart of our home now. The attention to detail and quality of execution was exceptional.",
-    name: "Ananya Reddy",
-    detail: "Modular Kitchen, Banjara Hills",
-  },
-  {
-    quote: "Calm, natural, timeless — exactly what they promised. We're still discovering new things to love.",
-    name: "Rohan Mehta",
-    detail: "Turnkey Apartment, Gachibowli",
-  },
-];
-
 const HomePage = () => {
   useRevealSection();
 
@@ -83,16 +66,7 @@ const HomePage = () => {
         {/* Subtle overlay: solid panel behind text, not a scrim over the whole image */}
         <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-lg mx-auto">
           <div className="bg-background/85 backdrop-blur-[2px] px-10 py-10 flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            {/* Leaf mark */}
-            <svg width="36" height="20" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M28 24 C28 24 10 18 6 8 C14 10 22 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.9"/>
-              <path d="M28 24 C28 24 46 18 50 8 C42 10 34 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.9"/>
-              <path d="M28 24 C28 24 20 12 22 2 C26 8 28 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.7"/>
-              <path d="M28 24 C28 24 36 12 34 2 C30 8 28 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.7"/>
-              <line x1="28" y1="26" x2="28" y2="6" stroke="hsl(38 52% 58%)" strokeWidth="1.2" opacity="0.6"/>
-            </svg>
-            <h1 className="font-serif text-4xl md:text-5xl tracking-[0.18em] text-foreground leading-none">VAYAANA</h1>
-            <p className="font-sans text-[10px] tracking-[0.5em] uppercase text-muted-foreground">INTERIORS</p>
+            <LogoLockup className="w-60 md:w-72 h-auto object-contain" />
             <div className="w-8 h-px bg-gold/60 my-1" />
             <p className="font-serif text-lg italic text-foreground/70 tracking-wide">Calm. Natural. Timeless.</p>
             <Link
@@ -236,32 +210,6 @@ const HomePage = () => {
           >
             Book a Design Consultation
           </Link>
-        </div>
-      </section>
-
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="bg-secondary py-20 md:py-28 px-6 md:px-10">
-        <div className="max-w-[1320px] mx-auto">
-          <div className="reveal mb-12">
-            <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-muted-foreground">Client Stories</span>
-            <h2 className="font-serif text-4xl md:text-5xl mt-2 text-foreground">What our clients say</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <div
-                key={i}
-                className="reveal bg-background p-8 flex flex-col gap-5 shadow-sm"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <span className="font-serif text-3xl text-gold/60">"</span>
-                <p className="font-serif text-lg italic text-foreground/80 leading-relaxed">{t.quote}</p>
-                <div className="mt-auto pt-4 border-t border-border">
-                  <p className="font-sans text-sm font-medium text-foreground">{t.name}</p>
-                  <p className="font-sans text-xs text-muted-foreground mt-0.5">{t.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

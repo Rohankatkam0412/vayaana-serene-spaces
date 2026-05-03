@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import LogoLockup from "./LogoLockup";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -11,17 +12,8 @@ const navLinks = [
 ];
 
 const VayaanaLogo = () => (
-  <Link to="/" className="flex flex-col items-center gap-0.5 group">
-    {/* Leaf branch SVG */}
-    <svg width="28" height="16" viewBox="0 0 56 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-gold transition-transform duration-500 group-hover:scale-110">
-      <path d="M28 24 C28 24 10 18 6 8 C14 10 22 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.9"/>
-      <path d="M28 24 C28 24 46 18 50 8 C42 10 34 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.9"/>
-      <path d="M28 24 C28 24 20 12 22 2 C26 8 28 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.7"/>
-      <path d="M28 24 C28 24 36 12 34 2 C30 8 28 16 28 24Z" fill="hsl(38 52% 58%)" opacity="0.7"/>
-      <line x1="28" y1="26" x2="28" y2="6" stroke="hsl(38 52% 58%)" strokeWidth="1.2" opacity="0.6"/>
-    </svg>
-    <span className="font-serif tracking-[0.25em] text-sm font-medium text-foreground leading-none">VAYAANA</span>
-    <span className="font-sans tracking-[0.35em] text-[9px] text-muted-foreground uppercase leading-none font-light">INTERIORS</span>
+  <Link to="/" className="block group" aria-label="VAYAANA Interiors home">
+    <LogoLockup className="h-11 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
   </Link>
 );
 
