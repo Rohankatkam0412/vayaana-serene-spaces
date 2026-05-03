@@ -150,12 +150,11 @@ const PortfolioPage = () => {
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-          {filtered.map((project, i) => (
+          {filtered.map((project) => (
             <Link
               key={project.id}
               to={`/portfolio/${project.id}`}
-              className="group reveal"
-              style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+              className="group"
             >
               <div className="overflow-hidden aspect-[4/5] bg-secondary">
                 <img
