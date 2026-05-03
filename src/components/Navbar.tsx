@@ -12,9 +12,8 @@ const navLinks = [
 ];
 
 const VayaanaLogo = () => (
-  <Link to="/" className="flex items-center gap-3 group" aria-label="VAYAANA Interiors home">
+  <Link to="/" className="block group" aria-label="VAYAANA Interiors home">
     <LogoLockup className="h-11 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
-    <span className="hidden md:inline-block font-serif text-sm tracking-[0.35em] uppercase text-foreground">VAYAANA</span>
   </Link>
 );
 
