@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# VAYAANA Interiors
 
-TODO: Document your project here
+Interior design portfolio and inquiry site for VAYAANA Interiors.
