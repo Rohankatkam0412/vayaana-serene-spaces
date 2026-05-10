@@ -123,7 +123,7 @@ const AboutPage = () => {
             <h2 className="font-serif text-4xl text-foreground">Rohan Katkam</h2>
             <div className="w-8 h-px bg-gold/60" />
             <p className="font-sans text-base text-muted-foreground leading-relaxed">
-              Rohan trained in architecture and interior design before spending several years working across Bangalore and Hyderabad on high-end residential projects. He founded Vayaana with a simple conviction: that most homes are over-decorated and under-designed.
+            Hi, I’m Rohan Katkam, the Founder of Vayaana. I’m passionate about creating interiors that are elegant, functional, and designed to feel timeless. For me, every space should reflect the personality and lifestyle of the people living in it, while also maintaining a sense of comfort and sophistication. I hold an MBA in Construction Project Management from RICS School of Built Environment, which helped me develop a strong understanding of project planning, execution, and quality management. With Vayaana, my goal is to bring together premium design, quality craftsmanship, and attention to detail to create spaces that people truly connect with. I believe great interiors are not just about aesthetics — they are about creating experiences and spaces that feel inspiring every single day.
             </p>
             <p className="font-sans text-base text-muted-foreground leading-relaxed">
               His approach starts with restraint — removing what doesn't need to be there before adding what does. He believes the best compliment a home can receive is not "how beautiful" but "how comfortable."

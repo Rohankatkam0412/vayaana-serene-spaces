@@ -37,6 +37,13 @@ const BUDGET_RANGES = [
   "Not sure yet",
 ];
 
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/rohan.vayaana@gmail.com";
+
+interface FormSubmitResponse {
+  success?: string;
+  message?: string;
+}
+
 const faqs = [
   {
     question: "How long does a typical residential project take?",
@@ -68,15 +75,61 @@ const ContactPage = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormState((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    const payload = new FormData();
+    payload.append("name", formState.name);
+    payload.append("email", formState.email);
+    payload.append("phone", formState.phone);
+    payload.append("city", formState.city);
+    payload.append("projectType", formState.projectType);
+    payload.append("budget", formState.budget);
+    payload.append("message", formState.message);
+    payload.append("_subject", `New VAYAANA inquiry from ${formState.name}`);
+    payload.append("_template", "table");
+    payload.append("_replyto", formState.email);
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        body: payload,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const result = (await response.json()) as FormSubmitResponse;
+
+      if (!response.ok || result.success === "false") {
+        throw new Error("Form submission failed");
+      }
+
+      setSubmitted(true);
+      setFormState({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        projectType: "",
+        budget: "",
+        message: "",
+      });
+    } catch {
+      setSubmitError("Something went wrong. Please email us directly at rohan.vayaana@gmail.com.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -126,7 +179,7 @@ const ContactPage = () => {
                   </div>
                 </a>
                 <a
-                  href="mailto:hello@vayaana.in"
+                  href="mailto:rohan.vayaana@gmail.com"
                   className="flex items-center gap-3 text-foreground hover:text-primary transition-colors duration-300 group"
                 >
                   <div className="w-8 h-8 flex items-center justify-center border border-border group-hover:border-primary transition-colors duration-300 flex-shrink-0">
@@ -134,7 +187,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-muted-foreground">Email</p>
-                    <p className="font-sans text-sm">hello@vayaana.in</p>
+                    <p className="font-sans text-sm">rohan.vayaana@gmail.com</p>
                   </div>
                 </a>
                 <div className="flex items-center gap-3 text-foreground">
@@ -262,10 +315,14 @@ const ContactPage = () => {
                 </div>
                 <button
                   type="submit"
-                  className="self-start mt-4 font-sans text-[11px] tracking-[0.25em] uppercase bg-primary text-primary-foreground px-10 py-4 hover:bg-foreground transition-colors duration-300 active:scale-[0.98]"
+                  disabled={isSubmitting}
+                  className="self-start mt-4 font-sans text-[11px] tracking-[0.25em] uppercase bg-primary text-primary-foreground px-10 py-4 hover:bg-foreground transition-colors duration-300 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Submit Inquiry
+                  {isSubmitting ? "Sending..." : "Submit Inquiry"}
                 </button>
+                {submitError && (
+                  <p className="font-sans text-sm text-destructive">{submitError}</p>
+                )}
               </form>
             )}
           </div>

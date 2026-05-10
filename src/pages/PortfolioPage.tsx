@@ -7,7 +7,7 @@ import project4 from "@/assets/project-4.jpg";
 import project5 from "@/assets/project-5.jpg";
 import project6 from "@/assets/project-6.jpg";
 
-const CATEGORIES = ["All", "Residential", "Kitchen", "Wardrobe", "Turnkey", "Custom Space"];
+const CATEGORIES = ["All", "Residential", "Kitchen", "Turnkey", "Custom Space"];
 
 const projects = [
   {
