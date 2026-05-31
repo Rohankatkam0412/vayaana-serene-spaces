@@ -5,7 +5,7 @@ import heroImg from "@/assets/hero-living-room.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 // Simple inline reveal hook for this page
 const useRevealSection = () => {
@@ -193,25 +193,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== CTA BANNER ===== */}
-      <section className="py-24 md:py-36 px-6 md:px-10 text-center">
-        <div className="max-w-2xl mx-auto reveal flex flex-col items-center gap-6">
-          <div className="w-px h-12 bg-border" />
-          <span className="font-sans text-[10px] tracking-[0.35em] uppercase text-muted-foreground">Ready to Begin?</span>
-          <h2 className="font-serif text-4xl md:text-6xl text-foreground leading-tight">
-            Let's design your dream home.
-          </h2>
-          <p className="font-sans text-base text-muted-foreground max-w-md">
-            Share your vision with us. We'll take it from there — with clarity, care, and craftsmanship.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-4 font-sans text-[11px] tracking-[0.25em] uppercase bg-primary text-primary-foreground px-10 py-4 hover:bg-foreground transition-colors duration-300"
-          >
-            Book a Design Consultation
-          </Link>
-        </div>
-      </section>
 
       {/* ===== INSTAGRAM STRIP ===== */}
       <section className="py-20 px-6 md:px-10 max-w-[1320px] mx-auto">
