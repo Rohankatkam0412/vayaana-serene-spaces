@@ -5,6 +5,9 @@ import heroImg from "@/assets/hero-living-room.jpg";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
+import project4 from "@/assets/project-4.jpg";
+import project5 from "@/assets/project-5.jpg";
+import project6 from "@/assets/project-6.jpg";
 import { useEffect } from "react";
 
 // Simple inline reveal hook for this page
@@ -212,7 +215,7 @@ const HomePage = () => {
         </div>
         {/* Instagram grid placeholder — shows real-feeling tiles */}
         <div className="grid grid-cols-3 md:grid-cols-6 gap-2 reveal">
-          {[project1, project2, project3].concat([project1, project2, project3]).map((img, i) => (
+          {[project1, project2, project3, project4, project5, project6].map((img, i) => (
             <a
               key={i}
               href="https://instagram.com/vayaana_interiors"
