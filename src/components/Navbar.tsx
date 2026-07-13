@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -36,7 +37,7 @@ const Navbar = () => {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-background/95 backdrop-blur-sm shadow-sm border-b border-border" : "bg-transparent"
+          scrolled ? "bg-background/95 backdrop-blur-sm shadow-sm border-b border-border" : "bg-background/40 backdrop-blur-sm"
         }`}
       >
         <nav className="max-w-[1320px] mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
